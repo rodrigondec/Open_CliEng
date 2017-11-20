@@ -12,7 +12,7 @@ class Equipment(models.Model):
 
 
 class Contract(models.Model):
-    equipment = models.ForeignKey(Equipment, on_delete=models.CASCADE)
+    equipment = models.ForeignKey(Equipment, on_delete=models.CASCADE, related_name='contract')
     description = models.TextField(max_length=800)
 
     def __str__(self):
