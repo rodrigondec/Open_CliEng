@@ -14,7 +14,7 @@ class Equipment(models.Model):
 
 
 class Contract(models.Model):
-    equipment = models.ForeignKey(Equipment, on_delete=models.CASCADE, related_name='contract')
+    equipment = models.OneToOneField(Equipment, related_name='contract', primary_key=True)
     description = models.TextField(max_length=800)
 
     def __str__(self):
