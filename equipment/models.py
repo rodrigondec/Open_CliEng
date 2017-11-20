@@ -1,11 +1,13 @@
 from django.db import models
-
+from location.models import Sector
 
 class Equipment(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField(max_length=200)
     buy_date = models.DateTimeField('date bought')
     maintenance_freq = models.IntegerField(default=0)
+
+    sector = models.ForeignKey(Sector, related_name='equipments')
 
     def __str__(self):
         return self.name
