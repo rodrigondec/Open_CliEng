@@ -20,9 +20,3 @@ class Functionary(models.Model):
 
     def __str__(self):
         return self.name
-
-
-# class Qualification(models.Model):
-#     name = models.CharField(max_length=200)
-#     equipment = models.OneToOneField(Equipment, related_name='qualification', primary_key=True)
-
