@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Equipment, Contract
+from .models import Equipamento, Contrato
 
 # Register your models here.
-admin.site.register(Equipment)
-admin.site.register(Contract)
+admin.site.register(Equipamento)
+admin.site.register(Contrato)

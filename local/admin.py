@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Building, Sector
+from .models import Predio, Setor
 
 # Register your models here.
-admin.site.register(Building)
-admin.site.register(Sector)
+admin.site.register(Predio)
+admin.site.register(Setor)
