@@ -1,21 +1,29 @@
 from django.db import models
-from location.models import Sector
+from djmoney.models.fields import MoneyField
+from local.models import Setor
+# from manutencao.models import TecnicoResponsavel
 
-class Equipment(models.Model):
-    name = models.CharField(max_length=200)
-    description = models.TextField(max_length=200)
-    buy_date = models.DateTimeField('date bought')
-    maintenance_freq = models.IntegerField(default=0)
 
-    sector = models.ForeignKey(Sector, related_name='equipments')
+class Equipamento(models.Model):
+    nome = models.CharField(max_length=50)
+    num_serie = models.CharField(max_length=100)
+    ano_fabricacao = models.DateField("Ano fabricacao")
+    data_aquisicao = models.DateField('Data aquisição')
+    fabricante = models.CharField(max_length=50)
+    modelo = models.CharField(max_length=50)
+    setor = models.ForeignKey(Setor, related_name='equipamentos')
+    custo = MoneyField(max_digits= 8, decimal_places=2, default_currency='BRL')
+    historico = models.TextField(max_length=800)
+    manual = models.TextField(max_length=800)
+    # responsavel = models.ForeignKey(TecnicoResponsavel, related_name='equipamentos')
 
     def __str__(self):
-        return self.name
+        return self.nome
 
 
-class Contract(models.Model):
-    equipment = models.OneToOneField(Equipment, related_name='contract', primary_key=True)
-    description = models.TextField(max_length=800)
+class Contrato(models.Model):
+    equipamento = models.OneToOneField(Equipamento, related_name='contrato', primary_key=True)
+    descricao = models.TextField(max_length=800, null=True)
 
     def __str__(self):
-        return "Contract for {} equipment.".format(self.equipment.name)
+        return "Contrato do equipamento {}".format(self.equipamento.nome)
