@@ -1,25 +1,11 @@
 from django.db import models
-from equipment.models import Equipment
+from equipamento.models import Equipamento
 
 
 class Funcionario(models.Model):
     nome = models.CharField(max_length=200)
-
     cpf = models.CharField(max_length=11)
-    qualificacoes = models.ManyToManyField(Equipment, related_name='functionaries_qualified')
+    qualificacoes = models.ManyToManyField(Equipamento, related_name='qualificados')
 
     def __str__(self):
         return self.nome
-
-
-class Qualificacao(models.Model):
-    OPERAR = 'OP'
-    CALIBRAR = 'CA'
-    MANUTENCAO = 'MA'
-
-    TYPE_CHOICES = (
-        (OPERAR, "Operar"),
-        (CALIBRAR, "Calibrar"),
-        (MANUTENCAO, "Manutenção"),
-    )
-
