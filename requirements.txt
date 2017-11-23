@@ -1,0 +1,5 @@
+Django==1.11.7
+django-money==0.12.1
+psycopg2==2.7.3.2
+py-moneyed==0.7.0
+pytz==2017.3
