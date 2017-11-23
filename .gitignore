@@ -34,3 +34,5 @@ local/migrations/
 manutencao/migrations/
 
 core/migrations/
+
+Open_Clineng/config\.py
