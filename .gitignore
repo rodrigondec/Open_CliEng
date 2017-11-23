@@ -24,3 +24,13 @@ ENV/
 env.bak/
 venv.bak/
 l_env/
+
+equipamento/migrations/
+
+funcionario/migrations/
+
+local/migrations/
+
+manutencao/migrations/
+
+core/migrations/
