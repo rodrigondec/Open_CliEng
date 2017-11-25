@@ -1,6 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Equipamento
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    context = {'equipamentos': Equipamento.objects.all()}
+    return render(request, 'index.html', context)
+
+
+def detalhar_equipamento(request):
+    return HttpResponse("detalhar equipamento")
+
+
+def detalhar_contrato(request):
+    return HttpResponse("detalhar contrato")
