@@ -21,6 +21,7 @@ class TecnicoResponsavel(Responsavel):
     usuario = models.OneToOneField(User)
     # cpf = models.CharField(max_length=11)
     qualificacoes = models.ManyToManyField(Equipamento, related_name='tecnicos_qualificados')
+    equipamentos = models.ForeignKey(Equipamento, related_name='responsavel')
 
 
 class Funcionario(models.Model):
