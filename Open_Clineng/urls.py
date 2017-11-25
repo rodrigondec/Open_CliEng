@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-#aquasdoqwidhquwhduqihdiwqada
+
 urlpatterns = [
     url(r'^', include('core.urls')),
     url(r'^equipamento/', include('equipamento.urls')),
