@@ -26,7 +26,7 @@ SECRET_KEY = 'ft(pys+1mt5)ia6x&rw9iw1yp)b6u=(-&4mzyid9w8q%f0ze%1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["openclineng.herokuapp.com", "127.0.0.1"]
+ALLOWED_HOSTS = ["openclineng.herokuapp.com", "127.0.0.1", "localhost"]
 
 # Application definition
 
