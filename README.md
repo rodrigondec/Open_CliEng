@@ -25,7 +25,7 @@ Veja nossa [wiki](https://github.com/rodrigondec/Open_Clineng/wiki). E se você 
 - Rode o ```pip``` para instalar as dependências do sistema com ```pip install -r requirements.txt```.
 - Termine de configurar o banco de dados adicionando as tabelas dele através do console do seu SO:
     - Rode ```python manage.py makemigrations```: Cria uma migração com nase nas alterações feitas dos models
-    - Rode ```python manage.py db migrate```: Altera o banco de dados com base nas migrações criadas
+    - Rode ```python manage.py migrate```: Altera o banco de dados com base nas migrações criadas
     
 ## Rodando o servidor
 
