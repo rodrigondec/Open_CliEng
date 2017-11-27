@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
-from equipamento.models import Equipamento
+
 
 
 # class PerfilUsuario(models.Model):
@@ -16,15 +16,22 @@ class EmpresaResponsavel(Responsavel):
     nome = models.CharField(max_length=50)
     cnpj = models.CharField(max_length=20)
 
+    def __str__(self):
+        return self.nome
 
 class TecnicoResponsavel(Responsavel):
     usuario = models.OneToOneField(User)
-    # cpf = models.CharField(max_length=11)
-    qualificacoes = models.ManyToManyField(Equipamento, related_name='tecnicos_qualificados')
-    equipamentos = models.ForeignKey(Equipamento, related_name='responsavel')
+    cpf = models.CharField(max_length=11)
 
+    def __str__(self):
+        return self.usuario.username
+
+from equipamento.models import Equipamento
 
 class Funcionario(models.Model):
     usuario = models.OneToOneField(User)
-    # cpf = models.CharField(max_length=11)
+    cpf = models.CharField(max_length=11)
     qualificacoes = models.ManyToManyField(Equipamento, related_name='funcionarios_qualificados')
+
+    def __str__(self):
+        return self.usuario.username

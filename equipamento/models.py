@@ -1,5 +1,6 @@
 from django.db import models
 from djmoney.models.fields import MoneyField
+from core.models import TecnicoResponsavel
 from local.models import Setor
 
 
@@ -14,6 +15,7 @@ class Equipamento(models.Model):
     custo = MoneyField(max_digits= 8, decimal_places=2, default_currency='BRL')
     historico = models.TextField(max_length=800)
     manual = models.TextField(max_length=800)
+    responsavel = models.ForeignKey(TecnicoResponsavel, related_name='equipamentos_responsavel')
 
     def __str__(self):
         return self.nome
