@@ -1,3 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
+from .models import Manutencao
+
+def manutencao_detalhes(request, manutencaoid):
+    manutencao = Manutencao.objects.get(pk=manutencaoid)
+    return render(request, 'manutencao_detalhes.html', manutencao=manutencao)
