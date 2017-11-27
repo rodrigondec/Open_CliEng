@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h1>Detalhes da manutenção</h1>
+<h2>{{ manutencao.id }}</h2>
+
+<ul>
+    <li><strong>Equipamento: </strong> {{ manutencao.equipamento }}</li>
+    <li><strong>Responsável: </strong> {{ manutencao.responsavel }}</li>
+    <li><strong>Descrição: </strong> {{ manutencao.descricao }}</li>
+    <li><strong>Data realizada: </strong> {{ manutencao.data_realizada }}</li>
+</ul>
+
+{% endblock %}
