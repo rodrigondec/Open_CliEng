@@ -5,6 +5,7 @@ from local.models import Setor
 
 
 class ContratoProprio(models.Model):
+    arquivo = models.FileField(upload_to="static/uploads/contratos")
     descricao = models.TextField(max_length=800, null=True)
     valor = MoneyField(max_digits=8, decimal_places=2, default_currency='BRL')
 
