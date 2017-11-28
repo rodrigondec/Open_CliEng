@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <h1>{{ contrato }}</h1>
+    <hr>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 col-md-offset-3">
+                <label>Arquivo: </label>
+                <a href="{{ contrato.arquivo.url }}" target="_blank">Ver</a>
+            </div>
+            <div class="col-md-3">
+                <label>Valor: </label>
+                {{ contrato.valor }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <label>Descrição: </label>
+                {{ contrato.descricao }}
+            </div>
+        </div>
+    </div>
+
+    <h1>Equipamentos Relacionados</h1>
+    <hr>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Num Serie</th>
+        </tr>
+        {% for equipamento in contrato.equipamentos.all %}
+        <tr>
+            <td>{{ equipamento }}</td>
+            <td>{{ equipamento.num_serie }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
