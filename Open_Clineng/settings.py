@@ -132,13 +132,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 STATIC_PATH = os.path.join(PROJECT_PATH,'static')
 STATIC_ROOT = os.path.join(SETTINGS_DIR, 'static')
-
 STATIC_URL = '/static/' # You may find this is already defined as such.
-
 STATICFILES_DIRS = (
-    STATIC_PATH,
+    os.path.join(STATIC_PATH, "css"),
 )
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(PROJECT_PATH, 'media') # Absolute path to the media directory
+
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
-
+# STATICFILES_STORAGE =  'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
