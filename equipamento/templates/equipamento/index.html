@@ -1,12 +1,38 @@
 {% extends 'base.html' %}
 
 {% block body %}
+    <h1>Equipamentos</h1>
+    <hr>
     {% if equipamentos %}
-        <ul>
-        {% for equipamento in equipamentos %}
-            <li>Nome: {{ equipamento.nome }}</li>
-        {% endfor %}
-        </ul>
+        <div class="row">
+            {% for equipamento in equipamentos %}
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+
+                        <div class="panel-heading">{{ equipamento.nome }}</div>
+                        <table class="table">
+                            <tr>
+                                <td>Num Serie</td>
+                                <td>{{ equipamento.num_serie }}</td>
+                            </tr>
+                            <tr>
+                                <td>Setor</td>
+                                <td>{{ equipamento.setor }}</td>
+                            </tr>
+                            <tr>
+                                <td>Manual</td>
+                                <td><a href="{{ equipamento.manual.url }}" target="_blank">Ver</a></td>
+                            </tr>
+                            <tr>
+                                <td>Contrato</td>
+                                <td><a href="/equipamento/detalhar_contrato/{{ equipamento.contrato.id }}">Ver</a></td>
+                            </tr>
+                        </table>
+                        <div class="panel-footer"><a href="/equipamento/detalhar/{{ equipamento.id }}">Detalhar</a></div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     {% else %}
         <p>Sem equipamentos cadastrados</p>
     {% endif %}

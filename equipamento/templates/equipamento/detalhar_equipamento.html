@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <h1>{{ equipamento.nome }}</h1>
+    <hr>
+
+    <div class="cointainer-fluid">
+        <div class="row">
+            <div class="col-md-3 col-md-offset-3">
+                <label>Número de Serie: </label>
+                {{ equipamento.num_serie }}
+            </div>
+            <div class="col-md-3">
+                <label>Registro Anvisa: </label>
+                {{ equipamento.reg_anvisa }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-md-offset-3">
+                <label>Data Fabricação: </label>
+                {{ equipamento.fabricacao }}
+            </div>
+            <div class="col-md-3">
+                <label>Data Aquisição: </label>
+                {{ equipamento.data_aquisicao }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-md-offset-3">
+                <label>Fabricante: </label>
+                {{ equipamento.fabricante }}
+            </div>
+            <div class="col-md-3">
+                <label>Modelo: </label>
+                {{ equipamento.modelo }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-md-offset-3">
+                <label>Setor Alocação: </label>
+                {{ equipamento.setor }}
+            </div>
+            <div class="col-md-3">
+                <label>Responsável: </label>
+                {{ equipamento.responsavel }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-md-offset-3">
+                <label>Manual: </label>
+                <a href="{{ equipamento.manual.url }}" target="_blank">Ver</a>
+            </div>
+            <div class="col-md-3">
+                <label>Contrato: </label>
+                <a href="/equipamento/detalhar_contrato/{{ equipamento.contrato.id }}">Ver</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <label>Histórico: </label>
+                {{ equipamento.historico }}
+            </div>
+        </div>
+    </div>
+
+    <h1>Funcionários Qualificados para Operar</h1>
+    <hr>
+    <table>
+        <tr>
+            <th>Nome</th>
+        </tr>
+        {% for funcionario in equipamento.funcionarios_qualificados.all %}
+        <tr>
+            <td>{{ funcionario.usuario.username }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
