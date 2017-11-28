@@ -135,6 +135,7 @@ STATIC_ROOT = os.path.join(SETTINGS_DIR, 'static')
 STATIC_URL = '/static/' # You may find this is already defined as such.
 STATICFILES_DIRS = (
     os.path.join(STATIC_PATH, "css"),
+    os.path.join(STATIC_PATH, "js"),
 )
 
 MEDIA_URL = '/media/'
