@@ -136,7 +136,8 @@ STATIC_ROOT = STATIC_PATH
 STATIC_URL = '/static/' # You may find this is already defined as such.
 
 STATICFILES_DIRS = (
-
+    os.path.join(STATIC_PATH, "bootstrap"),
+    os.path.join(STATIC_PATH, "estilo"),
 )
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
