@@ -5,7 +5,7 @@ from local.models import Setor
 
 
 class ContratoProprio(models.Model):
-    arquivo = models.FileField(upload_to="media/contratos")
+    arquivo = models.FileField(upload_to="contratos")
     descricao = models.TextField(max_length=800, null=True)
     valor = MoneyField(max_digits=8, decimal_places=2, default_currency='BRL')
 
@@ -31,7 +31,7 @@ class Equipamento(models.Model):
     setor = models.ForeignKey(Setor, related_name='equipamentos')
     custo = MoneyField(max_digits= 8, decimal_places=2, default_currency='BRL')
     historico = models.TextField(max_length=800)
-    manual = models.FileField(upload_to="media/manuais")
+    manual = models.FileField(upload_to="manuais")
     responsavel = models.ForeignKey(TecnicoResponsavel, related_name='equipamentos_responsavel')
     contrato = models.ForeignKey(ContratoProprio, related_name='equipamentos')
 
