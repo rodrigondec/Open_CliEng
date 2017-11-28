@@ -6,6 +6,7 @@ DB_NAME = "dafelg3fd81h3m"
 DB_USER = "zamkezdjhbexco"
 DB_PASSWORD = "15083a2d7e83bce97f46cffb22cc0aece4d7c0cf70e0800eeeda804e07d13881"
 
+## DB LOCAL
 # DB_HOST = "localhost"
 # DB_PORT = ""
 #
