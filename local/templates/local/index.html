@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    {% if locais %}
+        <ul>
+        {% for local in locais %}
+            <li>Nome: {{ local.nome }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Sem locais cadastrados</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    {% if manutencoes %}
+        <ul>
+        {% for manutencao in manutencoes %}
+            <li>Nome:</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Sem manutenções cadastrados</p>
+    {% endif %}
+{% endblock %}
