@@ -5,7 +5,7 @@ from .models import Equipamento
 
 def index(request):
     context = {'equipamentos': Equipamento.objects.all()}
-    return render(request, 'index.html', context)
+    return render(request, 'equipamento/index.html', context)
 
 
 def detalhar_equipamento(request):
