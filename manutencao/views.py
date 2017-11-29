@@ -9,9 +9,7 @@ def index(request):
     context["usuario_autenticado"] = request.user.is_authenticated()
 
     context['manutencoes'] = Manutencao.objects.all()
-    for manutencao in context['manutencoes']:
-        print(type(manutencao))
-        print(manutencao)
+
     return render(request, 'manutencao/index.html', context)
 
 

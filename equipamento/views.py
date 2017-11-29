@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, get_list_or_404
 from django.http import HttpResponse
-from .models import Equipamento, ContratoProprio
+from .models import Equipamento, Contrato
 from django.contrib.auth.decorators import login_required
 
 
@@ -20,6 +20,6 @@ def detalhar(request, equipamentoid):
 
 @login_required
 def detalhar_contrato(request, contratoid):
-    contrato = get_object_or_404(ContratoProprio, pk=contratoid)
+    contrato = get_object_or_404(Contrato, pk=contratoid)
     context = {'contrato': contrato, "usuario_autenticado": request.user.is_authenticated()}
     return render(request, 'equipamento/contrato_detalhes.html', context)
