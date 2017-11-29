@@ -1,9 +1,10 @@
 from django.db import models
 from core.models import Responsavel
 from equipamento.models import Equipamento
+from polymorphic.models import PolymorphicModel
 
 
-class Manutencao(models.Model):
+class Manutencao(PolymorphicModel):
     equipamento = models.ForeignKey(Equipamento)
     responsavel = models.ForeignKey(Responsavel)
     descricao = models.TextField(max_length=200)
