@@ -29,7 +29,7 @@ class Equipamento(models.Model):
     fabricante = models.CharField(max_length=50)
     modelo = models.CharField(max_length=50)
     setor = models.ForeignKey(Setor, related_name='equipamentos')
-    custo = MoneyField(max_digits= 8, decimal_places=2, default_currency='BRL')
+    custo = MoneyField(max_digits=20, decimal_places=2, default_currency='BRL')
     historico = models.TextField(max_length=800)
     manual = models.FileField(upload_to="manuais")
     responsavel = models.ForeignKey(TecnicoResponsavel, related_name='equipamentos_responsavel')
