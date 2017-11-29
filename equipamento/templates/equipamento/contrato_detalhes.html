@@ -2,20 +2,32 @@
 
 {% block content %}
 <div class="row">
-    <h1 class="text-center">{{ contrato }}</h1>
+    <h1 class="text-center">Datalhes do Contrato {{ contrato.id }}</h1>
     <hr>
 
     <div class="col-md-6 col-md-offset-3 panel panel-primary">
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-6">
-                    <label>Arquivo: </label>
-                    <a href="{{ contrato.arquivo.url }}" target="_blank">Ver</a>
+                    <label>Tipo: </label>
+                    {{ contrato.tipo }}
                 </div>
                 <div class="col-md-6">
                     <label>Valor: </label>
                     {{ contrato.valor }}
                 </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Arquivo: </label>
+                    <a href="{{ contrato.arquivo.url }}" target="_blank">Ver</a>
+                </div>
+                {% if contrato.tipo == "Comodato" %}
+                <div class="col-md-6">
+                    <label>Empresa: </label>
+                    {{ contrato.empresa }}
+                </div>
+                {% endif %}
             </div>
             <div class="row">
                 <div class="col-md-12">
