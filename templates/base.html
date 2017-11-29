@@ -36,9 +36,11 @@
                         </li>
                     </ul>
 
+                    {% if usuario_autenticado %}
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#" target="">Login</a></li>
+                        <li><a href="/logout" target="">Sair</a></li>
                     </ul>
+                    {% endif %}
                 </div>
             </div>
         </div>
