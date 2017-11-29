@@ -30,7 +30,7 @@
             </tr>
             {% for tecnico in tecnicos %}
             <tr>
-                <td>a{{ tecnico.usuario.username }}</td>
+                <td>{{ tecnico.usuario.username }}</td>
                 <td><a href="/detalhar_tecnico/{{ tecnico.id }}">Ver</a></td>
             </tr>
             {% endfor %}
