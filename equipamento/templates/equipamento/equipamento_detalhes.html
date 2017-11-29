@@ -20,7 +20,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <label>Data Fabricação: </label>
-                        {{ equipamento.fabricacao }}
+                        {{ equipamento.ano_fabricacao }}
                     </div>
                     <div class="col-md-6">
                         <label>Data Aquisição: </label>
@@ -48,11 +48,15 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
+                        <label>Custo: </label>
+                        {{ equipamento.custo }}
+                    </div>
+                    <div class="col-md-4">
                         <label>Manual: </label>
                         <a href="{{ equipamento.manual.url }}" target="_blank">Ver</a>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <label>Contrato: </label>
                         <a href="/equipamento/contrato/detalhar/{{ equipamento.contrato.id }}">Ver</a>
                     </div>
