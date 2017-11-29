@@ -1,5 +1,6 @@
 Django==1.11.7
 django-money==0.12.1
+django-polymorphic==1.3
 gunicorn==19.7.1
 psycopg2==2.7.3.2
 py-moneyed==0.7.0
