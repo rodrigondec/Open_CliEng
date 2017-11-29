@@ -1,5 +1,3 @@
-footer{
-    padding-top: 70px;
-    padding-bottom: 30px;
-    background-color: #ecf0f1;
+body > .container-fluid {
+  padding: 50px 5% 0;
 }
