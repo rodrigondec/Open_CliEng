@@ -7,7 +7,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
-        <!--<link rel="stylesheet" href="{% static 'custom.min.css' %}">-->
         <link rel="stylesheet" href="{% static 'general.css' %}">
         <link rel="stylesheet" href="{% static 'sticky_footer.css' %}">
         {% block styles %}
@@ -44,7 +43,7 @@
             </div>
         </div>
 
-        <div class="container">
+        <div class="container-fluid">
             {% block body %}
             {% endblock %}
         </div>
