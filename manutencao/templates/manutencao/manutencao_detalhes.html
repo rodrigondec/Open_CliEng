@@ -1,15 +1,47 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="row">
+    <h1 class="text-center">Detalhes da Manutenção {{ manutencao.id }}</h1>
+    <hr>
 
-    <h1>Detalhes da manutenção</h1>
-    <h2>{{ manutencao.id }}</h2>
-
-    <ul>
-        <li><strong>Equipamento: </strong> {{ manutencao.equipamento }}</li>
-        <li><strong>Responsável: </strong> {{ manutencao.responsavel }}</li>
-        <li><strong>Descrição: </strong> {{ manutencao.descricao }}</li>
-        <li><strong>Data realizada: </strong> {{ manutencao.data_realizada }}</li>
-    </ul>
-
+    <div class="col-md-6 col-md-offset-3 panel panel-primary">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Equipamento: </label>
+                    {{ manutencao.equipamento }}
+                </div>
+                <div class="col-md-6">
+                    <label>Tipo: </label>
+                    {{ manutencao.tipo }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Responsavel: </label>
+                    {{ manutencao.responsavel }}
+                </div>
+                <div class="col-md-6">
+                    <label>Data Realizada: </label>
+                    {{ manutencao.data_realizada }}
+                </div>
+            </div>
+            {% if manutencao.tipo == "Preventiva" %}
+            <div class="row">
+                <div class="col-md-6 col-md-offset-6">
+                    <label>Data Agendada: </label>
+                    {{ manutencao.data_agendada }}
+                </div>
+            </div>
+            {% endif %}
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Descrição: </label>
+                    {{ manutencao.descricao }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
