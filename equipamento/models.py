@@ -10,6 +10,10 @@ class Contrato(PolymorphicModel):
     descricao = models.TextField(max_length=800, null=True)
     valor = MoneyField(max_digits=20, decimal_places=2, default_currency='BRL')
 
+    @property
+    def tipo(self):
+        return "Contrato"
+
     def __str__(self):
         return "Contrato"
 
@@ -20,9 +24,14 @@ from core.models import EmpresaResponsavel
 class ContratoComodato(Contrato):
     empresa = models.ForeignKey(EmpresaResponsavel)
 
+    @property
+    def tipo(self):
+        return "Comodato"
 
 class ContratoProprio(Contrato):
-    pass
+    @property
+    def tipo(self):
+        return "Proprio"
 
 
 class Equipamento(models.Model):
