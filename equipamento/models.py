@@ -2,12 +2,13 @@ from django.db import models
 from djmoney.models.fields import MoneyField
 from core.models import TecnicoResponsavel
 from local.models import Setor
+from polymorphic.models import PolymorphicModel
 
 
-class ContratoProprio(models.Model):
+class Contrato(PolymorphicModel):
     arquivo = models.FileField(upload_to="contratos")
     descricao = models.TextField(max_length=800, null=True)
-    valor = MoneyField(max_digits=8, decimal_places=2, default_currency='BRL')
+    valor = MoneyField(max_digits=20, decimal_places=2, default_currency='BRL')
 
     def __str__(self):
         return "Contrato"
@@ -16,8 +17,12 @@ class ContratoProprio(models.Model):
 from core.models import EmpresaResponsavel
 
 
-class ContratoComodato(ContratoProprio):
+class ContratoComodato(Contrato):
     empresa = models.ForeignKey(EmpresaResponsavel)
+
+
+class ContratoProprio(Contrato):
+    pass
 
 
 class Equipamento(models.Model):
@@ -33,7 +38,7 @@ class Equipamento(models.Model):
     historico = models.TextField(max_length=800)
     manual = models.FileField(upload_to="manuais")
     responsavel = models.ForeignKey(TecnicoResponsavel, related_name='equipamentos_responsavel')
-    contrato = models.ForeignKey(ContratoProprio, related_name='equipamentos')
+    contrato = models.ForeignKey(Contrato, related_name='equipamentos')
 
     def __str__(self):
         return self.nome
