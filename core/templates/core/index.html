@@ -1,5 +1,76 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Hello there.</h1>
+<div class="row">
+    <div class="col-md-6">
+        <h1>Funcionários</h1>
+        <hr>
+
+        <table class="table table-striped table-hover">
+            <tr>
+                <th>Nome</th>
+                <th>Detalhar</th>
+            </tr>
+            {% for funcionario in funcionarios %}
+            <tr>
+                <td>{{ funcionario.usuario.username }}</td>
+                <td><a href="/detalhar_funcionario/{{ funcionario.id }}">Ver</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="col-md-6">
+        <h1>Técnicos</h1>
+        <hr>
+
+        <table class="table table-striped table-hover">
+            <tr>
+                <th>Nome</th>
+                <th>Detalhar</th>
+            </tr>
+            {% for tecnico in tecnicos %}
+            <tr>
+                <td>a{{ tecnico.usuario.username }}</td>
+                <td><a href="/detalhar_tecnico/{{ tecnico.id }}">Ver</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <h1>Equipamentos</h1>
+        <hr>
+
+        <table class="table table-striped table-hover">
+            <tr>
+                <th>Nome</th>
+                <th>Detalhar</th>
+            </tr>
+            {% for equipamento in equipamentos %}
+            <tr>
+                <td>{{ equipamento }}</td>
+                <td><a href="/equipamento/detalhar/{{ equipamento.id }}">Ver</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="col-md-6">
+        <h1>Manutenções</h1>
+        <hr>
+
+        <table class="table table-striped table-hover">
+            <tr>
+                <th>Nome</th>
+                <th>Detalhar</th>
+            </tr>
+            {% for manutencao in manutencoes %}
+            <tr>
+                <td>{{ manutencao }}</td>
+                <td><a href="/manutencao/detalhar/{{ manutencao.id }}">Ver</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
 {% endblock %}
