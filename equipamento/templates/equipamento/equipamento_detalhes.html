@@ -5,7 +5,7 @@
         <h1 class="text-center">{{ equipamento.nome }}</h1>
         <hr>
 
-        <div class="col-md-6 col-md-offset-3 panel panel-default">
+        <div class="col-md-6 col-md-offset-3 panel panel-primary">
             <div class="panel-body">
                 <div class="row">
                     <div class="col-md-6">
@@ -44,7 +44,7 @@
                     </div>
                     <div class="col-md-6">
                         <label>Responsável: </label>
-                        {{ equipamento.responsavel }}
+                        <a href="/tecnico/detalhar/{{ equipamento.responsavel.id }}">{{ equipamento.responsavel }}</a>
                     </div>
                 </div>
                 <div class="row">
@@ -54,7 +54,7 @@
                     </div>
                     <div class="col-md-6">
                         <label>Contrato: </label>
-                        <a href="/equipamento/detalhar_contrato/{{ equipamento.contrato.id }}">Ver</a>
+                        <a href="/equipamento/contrato/detalhar/{{ equipamento.contrato.id }}">Ver</a>
                     </div>
                 </div>
                 <div class="row">

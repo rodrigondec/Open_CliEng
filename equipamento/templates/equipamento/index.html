@@ -8,7 +8,7 @@
     <div class="row">
         {% for equipamento in equipamentos %}
         <div class="col-md-3">
-            <div class="panel panel-default">
+            <div class="panel panel-primary">
                 <div class="panel-heading">{{ equipamento.nome }}</div>
                 <table class="table table-striped table-hover">
                     <tr>
@@ -25,7 +25,7 @@
                     </tr>
                     <tr>
                         <td><label>Contrato</label></td>
-                        <td><a href="/equipamento/detalhar_contrato/{{ equipamento.contrato.id }}">Ver</a></td>
+                        <td><a href="/equipamento/contrato/detalhar/{{ equipamento.contrato.id }}">Ver</a></td>
                     </tr>
                 </table>
                 <div class="panel-footer"><a href="/equipamento/detalhar/{{ equipamento.id }}">Detalhar</a></div>

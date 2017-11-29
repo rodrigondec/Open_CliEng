@@ -1,8 +1,9 @@
 from django.contrib.auth.models import User
 from django.db import models
+from polymorphic.models import PolymorphicModel
 
 
-class Responsavel(models.Model):
+class Responsavel(PolymorphicModel):
     pass
 
 

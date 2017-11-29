@@ -2,32 +2,26 @@
 
 {% block content %}
 <div class="row">
-    <h1 class="text-center">{{ contrato }}</h1>
+    <h1 class="text-center">{{ funcionario }}</h1>
     <hr>
 
-    <div class="col-md-6 col-md-offset-3 panel panel-default">
+    <div class="col-md-6 col-md-offset-3 panel panel-primary">
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-6">
-                    <label>Arquivo: </label>
-                    <a href="{{ contrato.arquivo.url }}" target="_blank">Ver</a>
+                    <label>Email: </label>
+                    {{ funcionario.user.email }}
                 </div>
                 <div class="col-md-6">
-                    <label>Valor: </label>
-                    {{ contrato.valor }}
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <label>Descrição: </label>
-                    {{ contrato.descricao }}
+                    <label>CPF: </label>
+                    {{ funcionario.cpf }}
                 </div>
             </div>
         </div>
     </div>
 </div>
 <div class="row">
-    <h1 class="text-center">Equipamentos Relacionados</h1>
+    <h1 class="text-center">Equipamentos Qualificados</h1>
     <hr>
 
     <div class="col-md-6 col-md-offset-3">
@@ -36,7 +30,7 @@
                 <th>Nome</th>
                 <th>Num Serie</th>
             </tr>
-            {% for equipamento in contrato.equipamentos.all %}
+            {% for equipamento in funcionario.qualificacoes.all %}
             <tr>
                 <td>{{ equipamento }}</td>
                 <td>{{ equipamento.num_serie }}</td>

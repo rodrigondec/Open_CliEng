@@ -3,7 +3,7 @@
 {% block content %}
 <div class="row">
     <div class="col-md-6">
-        <h1>Funcionários</h1>
+        <h1 class="text-center">Funcionários</h1>
         <hr>
 
         <table class="table table-striped table-hover">
@@ -14,13 +14,13 @@
             {% for funcionario in funcionarios %}
             <tr>
                 <td>{{ funcionario.usuario.username }}</td>
-                <td><a href="/detalhar_funcionario/{{ funcionario.id }}">Ver</a></td>
+                <td><a href="/funcionario/detalhar/{{ funcionario.id }}">Ver</a></td>
             </tr>
             {% endfor %}
         </table>
     </div>
     <div class="col-md-6">
-        <h1>Técnicos</h1>
+        <h1 class="text-center">Técnicos</h1>
         <hr>
 
         <table class="table table-striped table-hover">
@@ -31,7 +31,7 @@
             {% for tecnico in tecnicos %}
             <tr>
                 <td>{{ tecnico.usuario.username }}</td>
-                <td><a href="/detalhar_tecnico/{{ tecnico.id }}">Ver</a></td>
+                <td><a href="/tecnico/detalhar/{{ tecnico.id }}">Ver</a></td>
             </tr>
             {% endfor %}
         </table>
@@ -39,7 +39,7 @@
 </div>
 <div class="row">
     <div class="col-md-6">
-        <h1>Equipamentos</h1>
+        <h1 class="text-center">Equipamentos</h1>
         <hr>
 
         <table class="table table-striped table-hover">
@@ -56,7 +56,7 @@
         </table>
     </div>
     <div class="col-md-6">
-        <h1>Manutenções</h1>
+        <h1 class="text-center">Manutenções</h1>
         <hr>
 
         <table class="table table-striped table-hover">

@@ -25,7 +25,7 @@ def detalhar_funcionario(request, funcionarioid):
 
     context['funcionario'] = get_object_or_404(Funcionario, pk=funcionarioid)
 
-    return render(request, 'core/detalhar_funcionario.html', context)
+    return render(request, 'core/funcionario_detalhes.html', context)
 
 
 @login_required
@@ -35,4 +35,4 @@ def detalhar_tecnico(request, tecnicoid):
 
     context['tecnico'] = get_object_or_404(TecnicoResponsavel, pk=tecnicoid)
 
-    return render(request, 'core/detalhar_tecnico.html', context)
+    return render(request, 'core/tecnico_detalhes.html', context)

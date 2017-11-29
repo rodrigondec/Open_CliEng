@@ -15,11 +15,11 @@ def index(request):
 def detalhar(request, equipamentoid):
     equipamento = get_object_or_404(Equipamento, pk=equipamentoid)
     context = {'equipamento': equipamento, "usuario_autenticado": request.user.is_authenticated()}
-    return render(request, 'equipamento/detalhar_equipamento.html', context)
+    return render(request, 'equipamento/equipamento_detalhes.html', context)
 
 
 @login_required
 def detalhar_contrato(request, contratoid):
     contrato = get_object_or_404(ContratoProprio, pk=contratoid)
     context = {'contrato': contrato, "usuario_autenticado": request.user.is_authenticated()}
-    return render(request, 'equipamento/detalhar_contrato.html', context)
+    return render(request, 'equipamento/contrato_detalhes.html', context)
