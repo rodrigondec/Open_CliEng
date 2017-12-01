@@ -9,74 +9,46 @@
         <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
         <!--<link rel="stylesheet" href="{% static 'general.css' %}">-->
         <!--<link rel="stylesheet" href="{% static 'sticky_footer.css' %}">-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
         <link rel="stylesheet" href="{% static 'side_menu.css' %}">
         {% block styles %}
         {% endblock %}
     </head>
     <body>
-        <div class="nav-side-menu">
-            <div class="brand">Brand Logo</div>
-            <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-            <div class="menu-list">
-                <ul id="menu-content" class="menu-content collapse out">
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-dashboard fa-lg"></i> Dashboard
-                        </a>
-                    </li>
-                    <li data-toggle="collapse" data-target="#products" class="collapsed active">
-                        <a href="#"><i class="fa fa-gift fa-lg"></i> UI Elements <span class="arrow"></span></a>
-                    </li>
-                    <ul class="sub-menu collapse" id="products">
-                        <li class="active"><a href="#">CSS3 Animation</a></li>
-                        <li><a href="#">General</a></li>
-                        <li><a href="#">Buttons</a></li>
-                        <li><a href="#">Tabs &amp; Accordions</a></li>
-                        <li><a href="#">Typography</a></li>
-                        <li><a href="#">FontAwesome</a></li>
-                        <li><a href="#">Slider</a></li>
-                        <li><a href="#">Panels</a></li>
-                        <li><a href="#">Widgets</a></li>
-                        <li><a href="#">Bootstrap Model</a></li>
-                    </ul>
-                    <li data-toggle="collapse" data-target="#service" class="collapsed">
-                        <a href="#"><i class="fa fa-globe fa-lg"></i> Services <span class="arrow"></span></a>
-                    </li>
-                    <ul class="sub-menu collapse" id="service">
-                        <li>New Service 1</li>
-                        <li>New Service 2</li>
-                        <li>New Service 3</li>
-                    </ul>
-
-
-                    <li data-toggle="collapse" data-target="#new" class="collapsed">
-                        <a href="#"><i class="fa fa-car fa-lg"></i> New <span class="arrow"></span></a>
-                    </li>
-                    <ul class="sub-menu collapse" id="new">
-                        <li>New New 1</li>
-                        <li>New New 2</li>
-                        <li>New New 3</li>
-                    </ul>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-user fa-lg"></i> Profile
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-users fa-lg"></i> Users
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="container" id="main">
-            <div class="row">
-                <div class="col-md-12">
-                    <h4>This is suppose to be in the main content</h4>
+        <nav class="navbar navbar-inverse navbar-global navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Santhosh Vertical Nav Project</a>
                 </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-user navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Santhosh Giridara</a></li>
+                        <li><a href="#about"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
             </div>
+        </nav>
+        <nav class="navbar-primary">
+            <a href="#" class="btn-expand-collapse"><span class="glyphicon glyphicon-menu-left"></span></a>
+            <ul class="navbar-primary-menu">
+                <li>
+                    <a href="#"><span class="glyphicon glyphicon-list-alt"></span><span class="nav-label">Dashboard</span></a>
+                    <a href="#"><span class="glyphicon glyphicon-envelope"></span><span class="nav-label">Profile</span></a>
+                    <a href="#"><span class="glyphicon glyphicon-cog"></span><span class="nav-label">Settings</span></a>
+                    <a href="#"><span class="glyphicon glyphicon-film"></span><span class="nav-label">Notification</span></a>
+                    <a href="#"><span class="glyphicon glyphicon-calendar"></span><span class="nav-label">Monitor</span></a>
+                </li>
+            </ul>
+        </nav>
+        <div class="main-content">
+            <h1> I am the main content </h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem sint assumenda quae aliquid voluptatibus quia, ea, ad natus magni repellat earum, culpa iure tempore. Enim dolor eaque minima voluptas ducimus?</p>
         </div>
         <!--<div class="navbar navbar-default navbar-fixed-top">-->
             <!--<div class="container">-->
@@ -242,6 +214,8 @@
         <script src="{% static 'jquery.min.js' %}"></script>
         <script src="{% static 'side_menu.js' %}"></script>
         <script src="{% static 'bootstrap.min.js' %}"></script>
+
+        <script src="https://use.fontawesome.com/389e7cf25b.js"></script>
 
         {% block scripts %}
         {% endblock %}
