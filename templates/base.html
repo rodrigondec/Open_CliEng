@@ -6,11 +6,11 @@
         <title>Open CliEng</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
-        <!--<link rel="stylesheet" href="{% static 'general.css' %}">-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/spacelab/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'general.css' %}">
         <!--<link rel="stylesheet" href="{% static 'sticky_footer.css' %}">-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="{% static 'side_menu.css' %}">
+        <link rel="stylesheet" href="{% static 'sidebar.css' %}">
         {% block styles %}
         {% endblock %}
     </head>
@@ -29,15 +29,32 @@
                             <a id="menu-toggle" href="#" class="btn-menu toggle">
                                 <i class="fa fa-bars"></i>
                             </a>
-                            <a href="#">Open Clieng</a>
+                            <a href="/">Open Clieng</a>
                         </div>
                     </div>
                     <div id="navbar" class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#about">About</a></li>
+                            <li>
+                                <a href="/equipamento/">Equipamentos</a>
+                            </li>
+                            <li>
+                                <a href="/manutencao/">Manutenções</a>
+                            </li>
+                            <li>
+                                <a href="/local/">Locais</a>
+                            </li>
+                            <li>
+                                <a href="#">Ordem de Serviço</a>
+                            </li>
                         </ul>
-                    </div><!--/.nav-collapse -->
+
+                        {% if usuario_autenticado %}
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/logout" target="">Sair</a></li>
+                        </ul>
+                        {% endif %}
+
+                    </div>
                 </div>
             </nav>
             <div id="sidebar-wrapper" class="nav-side-menu">
