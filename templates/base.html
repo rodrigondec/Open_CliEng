@@ -7,71 +7,240 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
-        <link rel="stylesheet" href="{% static 'general.css' %}">
-        <link rel="stylesheet" href="{% static 'sticky_footer.css' %}">
+        <!--<link rel="stylesheet" href="{% static 'general.css' %}">-->
+        <!--<link rel="stylesheet" href="{% static 'sticky_footer.css' %}">-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'side_menu.css' %}">
         {% block styles %}
         {% endblock %}
     </head>
     <body>
-        <div class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <a href="/" class="navbar-brand">Home Open CliEng</a>
-                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div class="navbar-collapse collapse" id="navbar-main">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a href="/equipamento/">Equipamentos</a>
-                        </li>
-                        <li>
-                            <a href="/manutencao/">Manutenções</a>
-                        </li>
-                        <li>
-                            <a href="/local/">Locais</a>
-                        </li>
-                        <li>
-                            <a href="#">Ordem de Serviço</a>
-                        </li>
+        <div class="nav-side-menu">
+            <div class="brand">Brand Logo</div>
+            <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+            <div class="menu-list">
+                <ul id="menu-content" class="menu-content collapse out">
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-dashboard fa-lg"></i> Dashboard
+                        </a>
+                    </li>
+                    <li data-toggle="collapse" data-target="#products" class="collapsed active">
+                        <a href="#"><i class="fa fa-gift fa-lg"></i> UI Elements <span class="arrow"></span></a>
+                    </li>
+                    <ul class="sub-menu collapse" id="products">
+                        <li class="active"><a href="#">CSS3 Animation</a></li>
+                        <li><a href="#">General</a></li>
+                        <li><a href="#">Buttons</a></li>
+                        <li><a href="#">Tabs &amp; Accordions</a></li>
+                        <li><a href="#">Typography</a></li>
+                        <li><a href="#">FontAwesome</a></li>
+                        <li><a href="#">Slider</a></li>
+                        <li><a href="#">Panels</a></li>
+                        <li><a href="#">Widgets</a></li>
+                        <li><a href="#">Bootstrap Model</a></li>
+                    </ul>
+                    <li data-toggle="collapse" data-target="#service" class="collapsed">
+                        <a href="#"><i class="fa fa-globe fa-lg"></i> Services <span class="arrow"></span></a>
+                    </li>
+                    <ul class="sub-menu collapse" id="service">
+                        <li>New Service 1</li>
+                        <li>New Service 2</li>
+                        <li>New Service 3</li>
                     </ul>
 
-                    {% if usuario_autenticado %}
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/logout" target="">Sair</a></li>
+
+                    <li data-toggle="collapse" data-target="#new" class="collapsed">
+                        <a href="#"><i class="fa fa-car fa-lg"></i> New <span class="arrow"></span></a>
+                    </li>
+                    <ul class="sub-menu collapse" id="new">
+                        <li>New New 1</li>
+                        <li>New New 2</li>
+                        <li>New New 3</li>
                     </ul>
-                    {% endif %}
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-user fa-lg"></i> Profile
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-users fa-lg"></i> Users
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container" id="main">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>This is suppose to be in the main content</h4>
                 </div>
             </div>
         </div>
+        <!--<div class="navbar navbar-default navbar-fixed-top">-->
+            <!--<div class="container">-->
+                <!--<div class="navbar-header">-->
+                    <!--<a href="/" class="navbar-brand">Home Open CliEng</a>-->
+                    <!--<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">-->
+                        <!--<span class="icon-bar"></span>-->
+                        <!--<span class="icon-bar"></span>-->
+                        <!--<span class="icon-bar"></span>-->
+                    <!--</button>-->
+                <!--</div>-->
+                <!--<div class="navbar-collapse collapse" id="navbar-main">-->
+                    <!--<ul class="nav navbar-nav">-->
+                        <!--<li>-->
+                            <!--<a href="/equipamento/">Equipamentos</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="/manutencao/">Manutenções</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="/local/">Locais</a>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<a href="#">Ordem de Serviço</a>-->
+                        <!--</li>-->
+                    <!--</ul>-->
 
-        <div class="container-fluid">
-            {% block content %}
-            {% endblock %}
-        </div>
+                    <!--{% if usuario_autenticado %}-->
+                    <!--<ul class="nav navbar-nav navbar-right">-->
+                        <!--<li><a href="/logout" target="">Sair</a></li>-->
+                    <!--</ul>-->
+                    <!--{% endif %}-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
 
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <p>
-                            Copyright (c) 2017
-                            <a href="https://github.com/Mazuh" target="_blank">Marcell G. C. da S.</a>,
-                            <a href="https://github.com/Costams" target="_blank">Mateus S. C.</a>,
-                            <a href="https://github.com/rodrigondec" target="_blank">Rodrigo N. de C.</a>
-                        </p>
-                        <p>
-                            Código livre (MIT License): <a href="https://github.com/rodrigondec/Open_Clineng/" target="_blank">https://github.com/rodrigondec/Open_Clineng/</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        <!--<div class="nav-side-menu">-->
+            <!--<div class="brand">Brand Logo</div>-->
+            <!--<i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>-->
+            <!--<div class="menu-list">-->
+                <!--<ul id="menu-content" class="menu-content collapse out">-->
+                    <!--<li>-->
+                        <!--<a href="#">-->
+                            <!--<i class="fa fa-dashboard fa-lg"></i> Dashboard-->
+                        <!--</a>-->
+                    <!--</li>-->
+                    <!--<li data-toggle="collapse" data-target="#products" class="collapsed active">-->
+                        <!--<a href="#"><i class="fa fa-gift fa-lg"></i> UI Elements <span class="arrow"></span></a>-->
+                    <!--</li>-->
+                    <!--<ul class="sub-menu collapse" id="products">-->
+                        <!--<li class="active"><a href="#">CSS3 Animation</a></li>-->
+                        <!--<li><a href="#">General</a></li>-->
+                        <!--<li><a href="#">Buttons</a></li>-->
+                        <!--<li><a href="#">Tabs &amp; Accordions</a></li>-->
+                        <!--<li><a href="#">Typography</a></li>-->
+                        <!--<li><a href="#">FontAwesome</a></li>-->
+                        <!--<li><a href="#">Slider</a></li>-->
+                        <!--<li><a href="#">Panels</a></li>-->
+                        <!--<li><a href="#">Widgets</a></li>-->
+                        <!--<li><a href="#">Bootstrap Model</a></li>-->
+                    <!--</ul>-->
+                    <!--<li data-toggle="collapse" data-target="#service" class="collapsed">-->
+                        <!--<a href="#"><i class="fa fa-globe fa-lg"></i> Services <span class="arrow"></span></a>-->
+                    <!--</li>-->
+                    <!--<ul class="sub-menu collapse" id="service">-->
+                        <!--<li>New Service 1</li>-->
+                        <!--<li>New Service 2</li>-->
+                        <!--<li>New Service 3</li>-->
+                    <!--</ul>-->
+
+
+                    <!--<li data-toggle="collapse" data-target="#new" class="collapsed">-->
+                        <!--<a href="#"><i class="fa fa-car fa-lg"></i> New <span class="arrow"></span></a>-->
+                    <!--</li>-->
+                    <!--<ul class="sub-menu collapse" id="new">-->
+                        <!--<li>New New 1</li>-->
+                        <!--<li>New New 2</li>-->
+                        <!--<li>New New 3</li>-->
+                    <!--</ul>-->
+                    <!--<li>-->
+                        <!--<a href="#">-->
+                            <!--<i class="fa fa-user fa-lg"></i> Profile-->
+                        <!--</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a href="#">-->
+                            <!--<i class="fa fa-users fa-lg"></i> Users-->
+                        <!--</a>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="container-fluid">-->
+            <!--<div class="row">-->
+                <!--<div class="col-md-2">-->
+
+                <!--</div>-->
+                <!--<div class="col-md-10">-->
+                    <!--{% block content %}-->
+                    <!--{% endblock %}-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+<!--<div class="wrapper">-->
+    <!--<div class="row row-offcanvas row-offcanvas-left">-->
+        <!--&lt;!&ndash; sidebar &ndash;&gt;-->
+        <!--<div class="column col-sm-3 col-xs-1 sidebar-offcanvas" id="sidebar">-->
+            <!--<ul class="nav" id="menu">-->
+                <!--<li><a href="#"><i class="fa fa-list-alt"></i> <span class="collapse in hidden-xs">Link 1</span></a></li>-->
+                <!--<li><a href="#"><i class="fa fa-list"></i> <span class="collapse in hidden-xs">Stories</span></a></li>-->
+                <!--<li><a href="#"><i class="fa fa-paperclip"></i> <span class="collapse in hidden-xs">Saved</span></a></li>-->
+                <!--<li><a href="#"><i class="fa fa-refresh"></i> <span class="collapse in hidden-xs">Refresh</span></a></li>-->
+                <!--<li>-->
+                    <!--<a href="#" data-target="#item1" data-toggle="collapse"><i class="fa fa-list"></i> <span class="collapse in hidden-xs">Menu <span class="caret"></span></span></a>-->
+                    <!--<ul class="nav nav-stacked collapse left-submenu" id="item1">-->
+                        <!--<li><a href="google.com">View One</a></li>-->
+                        <!--<li><a href="gmail.com">View Two</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#" data-target="#item2" data-toggle="collapse"><i class="fa fa-list"></i> <span class="collapse in hidden-xs">Menu <span class="caret"></span></span></a>-->
+                    <!--<ul class="nav nav-stacked collapse" id="item2">-->
+                        <!--<li><a href="#">View One</a></li>-->
+                        <!--<li><a href="#">View Two</a></li>-->
+                        <!--<li><a href="#">View Three</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li><a href="#"><i class="glyphicon glyphicon-list-alt"></i> <span class="collapse in hidden-xs">Link</span></a></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; /sidebar &ndash;&gt;-->
+
+        <!--&lt;!&ndash; main right col &ndash;&gt;-->
+        <!--<div class="column col-sm-9 col-xs-11" id="main">-->
+            <!--<p><a href="#" data-toggle="offcanvas"><i class="fa fa-navicon fa-2x"></i></a></p>-->
+            <!--<p>-->
+                <!--Main content...-->
+            <!--</p>-->
+        <!--</div>-->
+        <!-- /main -->
+        <!--<footer class="footer">-->
+            <!--<div class="container">-->
+                <!--<div class="row">-->
+                    <!--<div class="col-lg-12">-->
+                        <!--<p>-->
+                            <!--Copyright (c) 2017-->
+                            <!--<a href="https://github.com/Mazuh" target="_blank">Marcell G. C. da S.</a>,-->
+                            <!--<a href="https://github.com/Costams" target="_blank">Mateus S. C.</a>,-->
+                            <!--<a href="https://github.com/rodrigondec" target="_blank">Rodrigo N. de C.</a>-->
+                        <!--</p>-->
+                        <!--<p>-->
+                            <!--Código livre (MIT License): <a href="https://github.com/rodrigondec/Open_Clineng/" target="_blank">https://github.com/rodrigondec/Open_Clineng/</a>-->
+                        <!--</p>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</footer>-->
+    <!--</div>-->
+<!--</div>-->
+
 
         <script src="{% static 'jquery.min.js' %}"></script>
+        <script src="{% static 'side_menu.js' %}"></script>
         <script src="{% static 'bootstrap.min.js' %}"></script>
 
         {% block scripts %}
